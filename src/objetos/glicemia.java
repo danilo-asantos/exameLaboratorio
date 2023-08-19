@@ -69,6 +69,9 @@ public class glicemia {
     }
     
     public void mostrarResultado(){
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Idade: " + this.idade);
+        System.out.println("Tipo sanguíneo: " + this.tipoSanguineo);
         System.out.println(resultadoGlicemia);
     }
     

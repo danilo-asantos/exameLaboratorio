@@ -2,6 +2,7 @@
 package objetos;
 
 import java.util.Calendar;
+import javax.swing.JOptionPane;
 
 public class triglicerideos {
     private String nome;
@@ -17,7 +18,23 @@ public class triglicerideos {
         return anoAtual - anoNascimento;
     }
     
+    public void cadastrarExame(){
+        nome = JOptionPane.showInputDialog("Nome do paciente:");
+        tipoSanguineo = JOptionPane.showInputDialog("Tipo sanguíneo:");
+        nivelTriglicerideos = Integer.parseInt(JOptionPane.showInputDialog("Nível de triglicerideos"));
+    }
     
+    public void classificarResultado(){
+        if(this.idade < 10){
+           System.out.println("Exame Triglicerídeos: \n- Nível: " + nivelTriglicerideos +  "Com jejum: deve ser inferior a 75mg/l"); 
+        }
+        if(this.idade >= 10 && this.idade < 20){
+            System.out.println("Exame Triglicerídeos: \n- Nível: " + nivelTriglicerideos +  "\n- Com jejum: deve ser inferior a 90mg/l");
+        }
+        if(this.idade >= 20){
+            System.out.println("Exame Triglicerídeos: \n- Nível: " + nivelTriglicerideos + "\n- Com jejum: deve ser inferior a 150mg/l");
+        }
+    }
     
     
     public String getNome() {
